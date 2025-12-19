@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wishlist Section</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background: #f5f6f7;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #f9fafb;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LEFT SECTION */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .logo img {
+            width: 90px;
+        }
+
+        /* MENU */
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .nav-menu a.active {
+            color: #FF3B30;
+        }
+
+        /* SEARCH BOX */
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 14px 45px 14px 18px;
+            border-radius: 16px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #000;
+        }
+
+        /* RIGHT SECTION */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-right i {
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* PROFILE DROPDOWN */
+        .profile-wrapper {
+            position: relative;
+        }
+
+        .profile-dropdown {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 220px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 100;
+        }
+
+        .profile-dropdown.active {
+            display: block;
+        }
+
+        .dropdown-title {
+            padding: 14px 16px;
+            font-weight: 700;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-dropdown ul {
+            list-style: none;
+        }
+
+        .profile-dropdown ul li {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .profile-dropdown ul li:hover {
+            background: #f5f5f5;
+        }
+
+        .profile-dropdown .logout {
+            color: red;
+        }
+
+/* Bell Wrapper */
+.bell-wrapper{
+    position: relative;
+}
+
+/* Notification Box */
+.notification-box{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 1200px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    z-index: 200;
+    
+}
+
+.notification-box h3{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.notification-box p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+
+
+/* TITLE */
+.title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 40px 0;
+}
+
+/* CONTAINER */
+.wishlist-container {
+    width: 90%;
+    margin: auto;
+}
+
+/* HEADER ROW */
+.wishlist-header {
+    background: #FF3B30;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1.5fr 1.5fr 2fr;
+    padding: 18px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* CONTENT ROW */
+.wishlist-row {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1.5fr 1.5fr 2fr;
+    align-items: center;
+    padding: 25px 20px;
+    margin-top: 25px;
+    background: #f5f6f7;
+    border-radius: 10px;
+}
+
+/* IMAGE */
+.program-img img {
+    width: 100px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* TEXT */
+.wishlist-row div {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* BUTTON */
+.subscribe-btn {
+    padding: 14px 28px;
+    background: #FF3B30;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+
+.footer {
+            background: #ffffff;
+            border-top: 2px solid black;
+            padding: 20px 20px 10px;
+            color: #000;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-box h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+       }
+
+        .footer-box ul {
+            list-style: none;
+            
+        }
+
+        .footer-box ul li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: black
+        }
+
+        .logo-box img {
+            width: 150px;
+        }
+
+        .contact-box p {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .social-box img {
+            width: 180px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .social-box h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons i {
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .social-icons i:hover {
+            background: #FF3B30;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .footer-bottom p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .footer-bottom span {
+            cursor: pointer;
+        }
+
+        .footer-bottom span:hover {
+            color: #FF3B30;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        .footer {
+            background: #ffffff;
+            border-top: 2px solid black;
+            padding: 20px 20px 10px;
+            color: #000;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-box h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+       }
+
+        .footer-box ul {
+            list-style: none;
+            
+        }
+
+        .footer-box ul li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: black
+        }
+
+        .logo-box img {
+            width: 150px;
+        }
+
+        .contact-box p {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .social-box img {
+            width: 180px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .social-box h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons i {
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .social-icons i:hover {
+            background: #FF3B30;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .footer-bottom p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .footer-bottom span {
+            cursor: pointer;
+        }
+
+        .footer-bottom span:hover {
+            color: #FF3B30;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+</style>
+</head>
+
+<body>
+
+
+    
+<header class="navbar">
+
+        <!-- LEFT -->
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logoprofiles.png" alt="Fitness Logo">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="program.html">Programs</a>
+                <a href="tracking.html">Tracking</a>
+                <a href="subscriptions.html">Subscriptions</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contactus.html" class="active">Contact us</a>
+            </nav>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search programs">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="profile-wrapper">
+                <div class="profile" onclick="toggleProfile()">
+                    <img src="profile1.jpg" width="60px" border-radius="10px" alt="User">
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <p class="dropdown-title">My Accounts</p>
+                    <ul>
+                        <li><a href="personalinfo.html">Personal Information</a></li>
+
+                        <li><a href="myprogram.html">My Program</a></li>
+                        <li><a href="password.html">Password Manager</a></li>
+                        <li class="logout"><a href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+            <div class="bell-wrapper">
+                <i class="fa-regular fa-bell" onclick="toggleNotification()"></i>
+
+                <div class="notification-box" id="notificationBox">
+                    <h3>Program Notification Messages</h3>
+                    <p>1.New program Available</p>
+                    <p>New program Alert!</p>
+
+                    <p>Advanced fitness wellness Techniques is now live.start learning the latest worldwide trends and
+                        user flows today.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+<h2 class="title">Wishlist Section</h2>
+
+<div class="wishlist-container">
+
+    <!-- HEADER -->
+    <div class="wishlist-header">
+        <div>My Program</div>
+        <div>Names</div>
+        <div>Subscription</div>
+        <div>Start Date</div>
+        <div>Subscription Status</div>
+    </div>
+
+    <!-- ROW -->
+    <div class="wishlist-row">
+        <div class="program-img">
+            <img src="weightlossprgrm.png" alt="Program">
+        </div>
+
+        <div>Weight loss program</div>
+        <div>Rs.2,500/Mon</div>
+        <div>22 July 2025</div>
+        <div>
+            <button class="subscribe-btn" onclick="goToSubscription()">
+                Add Subscription
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+<footer class="footer">
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-box logo-box">
+                <img src="logoprofiles.png" alt="Fitness Center Logo">
+            </div>
+
+            <!-- About Us -->
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Who We Are</li>
+                    <li>Our Mission</li>
+                    <li>How It Works</li>
+                    <li>Success</li>
+                    <li>Courses</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Browse</li>
+                    <li>Packages</li>
+                    <li>Categories</li>
+                    <li>Support</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+
+            <!-- Feature -->
+            <div class="footer-box">
+                <h3>Feature</h3>
+                <ul>
+                    <li>HIIT</li>
+                    <li>Strength Yoga</li>
+                    <li>Cardio</li>
+                    <li>Cycling</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box contact-box">
+                <h3>Contact & Social</h3>
+                <p>123 saik Street, Chennai, TN</p>
+                <p>+91-7867980-688</p>
+                <p>Fitness@Fitnesscenter.com</p>
+            </div>
+
+            <!-- Image + Social -->
+            <div class="footer-box social-box">
+                <img src="thumbs.png" alt="Dumbbell">
+                <h4>Follow Us On :</h4>
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Fitness center. All rights reserved.</p>
+            <p>
+                <span><b>Terms & Conditions</b></span> |
+                <span><b>Privacy Policy</b></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleProfile() {
+            document.getElementById("profileDropdown")
+                .classList.toggle("active");
+        }
+
+        // close when clicking outside
+        document.addEventListener("click", function (e) {
+            const profile = document.querySelector(".profile-wrapper");
+            const dropdown = document.getElementById("profileDropdown");
+
+            if (!profile.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+
+
+
+
+        function toggleNotification() {
+            const box = document.getElementById("notificationBox");
+            box.style.display = box.style.display === "block" ? "none" : "block";
+        }
+
+
+
+function goToSubscription(){
+    window.location.href = "subscription.html";
+}
+
+function toggleProfile(){
+    document.getElementById('profileDropdown').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

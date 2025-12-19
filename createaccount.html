@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            height: 85vh;
+            background: #f9f2f0;
+            display: flex;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        /* LEFT IMAGE */
+        .left {
+            flex: 1;
+            background: url("aboutusleftimage.png") center/cover no-repeat;
+        }
+
+        /* RIGHT FORM */
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 420px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .card h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .input {
+            margin-bottom: 18px;
+        }
+
+        .input input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 25px;
+            border: 2px solid #FF3B30;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input input::placeholder {
+            color: #FF3B30;
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 10px;
+            background: #FF3B30;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #FF3B30;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        /* MESSAGE */
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+            .left {
+                display: none;
+            }
+
+            .container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LEFT IMAGE -->
+        <div class="left"></div>
+
+        <!-- RIGHT FORM -->
+        <div class="right">
+            <div class="card">
+
+                <div class="close">&times;</div>
+
+                <h2>Sign Up</h2>
+
+                <!-- IDs ADDED -->
+                <div class="input">
+                    <input type="text" id="name" placeholder="Full Name">
+                </div>
+
+                <div class="input">
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+
+                <div class="input">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+
+                <!-- FUNCTION ADDED -->
+                <button class="btn" onclick="signup()">Sign Up</button>
+
+                <!-- MESSAGE -->
+                <div id="msg" class="message"></div>
+
+                <div class="login-link">
+                    Already have an account ?
+                    <a href="register.html">Log in</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function signup() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var msg = document.getElementById("msg");
+
+            if (name === "" || email === "" || password === "") {
+                msg.style.display = "block";
+                msg.className = "message error";
+                msg.innerHTML = "Please fill all fields";
+                return;
+            }
+
+            msg.style.display = "block";
+            msg.className = "message success";
+            msg.innerHTML = "Sign up successful! Redirecting...";
+
+            setTimeout(function () {
+                window.location.href = "home.html";
+            }, 1500);
+        }
+    </script>
+
+</body>
+
+</html>

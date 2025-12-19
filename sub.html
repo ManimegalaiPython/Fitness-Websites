@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subcription</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        
+
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            background: #f5f6f7;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #f9fafb;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* LEFT SECTION */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .logo img {
+            width: 90px;
+        }
+
+        /* MENU */
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .nav-menu a.active {
+            color: #FF3B30;
+        }
+
+        /* SEARCH BOX */
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 14px 45px 14px 18px;
+            border-radius: 16px;
+            border: 1px solid #ddd;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #000;
+        }
+
+        /* RIGHT SECTION */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-right i {
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* PROFILE DROPDOWN */
+        .profile-wrapper {
+            position: relative;
+        }
+
+        .profile-dropdown {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 220px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            display: none;
+            z-index: 100;
+        }
+
+        .profile-dropdown.active {
+            display: block;
+        }
+
+        .dropdown-title {
+            padding: 14px 16px;
+            font-weight: 700;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-dropdown ul {
+            list-style: none;
+        }
+
+        .profile-dropdown ul li {
+            padding: 12px 16px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .profile-dropdown ul li:hover {
+            background: #f5f5f5;
+        }
+
+        .profile-dropdown .logout {
+            color: red;
+        }
+
+/* Bell Wrapper */
+.bell-wrapper{
+    position: relative;
+}
+
+/* Notification Box */
+.notification-box{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 1200px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    z-index: 200;
+    
+}
+
+.notification-box h3{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.notification-box p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+
+
+/* PAGE TITLE */
+.page-title{
+    text-align:center;
+    font-size:32px;
+    font-weight:700;
+    margin:50px 0;
+}
+
+/* MAIN CONTAINER */
+.main-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    padding-bottom:80px;
+}
+
+/* CARD */
+.card{
+    background:#fff;
+    width:750px;
+    padding:40px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    display:flex;
+    justify-content:space-between;
+}
+
+/* LEFT */
+.card-left{
+    width:45%;
+}
+
+.card-left h2{
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#1e88ff;
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.chart{
+    font-size:12px;
+    color:#555;
+}
+
+/* RIGHT */
+.card-right{
+    width:45%;
+}
+
+.free-trial{
+    background:#1e88ff;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    font-size:14px;
+    display:inline-block;
+    margin-bottom:25px;
+}
+
+.features{
+    list-style:none;
+}
+
+.features li{
+    margin-bottom:15px;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+}
+
+.features i{
+    color:#4CAF50;
+    margin-right:10px;
+    font-size:18px;
+}
+
+/* START BUTTON */
+.start-btn{
+    background:#ff3b30;
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+    padding:20px 40px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    height:fit-content;
+}
+
+.start-btn:hover{
+    opacity:0.9;
+}
+/* PROGRAM WRAPPER */
+.program-wrapper{
+    background:#fff;
+    border-radius:14px;
+    display:flex;
+    overflow:hidden;
+    margin-bottom: 40px;
+}
+
+/* LEFT SECTION */
+.left-section{
+    width:55%;
+}
+
+.left-section img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+        border-radius: 10px;
+
+}
+
+/* RED INFO */
+.program-info{
+    background:#ff3b30;
+    color:#fff;
+    padding:30px;
+}
+
+.program-info h2{
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.program-info p{
+    font-size:18px;
+}
+
+.prices{
+    font-size:22px;
+    font-weight:700;
+    margin:20px 0;
+    color:#fff;
+}
+
+/* 🔹 NEW FLEX ROW */
+.trainer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+}
+
+.trainer{
+    font-size:18px;
+    font-weight:600;
+}
+
+/* STARS RIGHT */
+.stars{
+    display:flex;
+    gap:4px;
+}
+
+.stars i{
+    color:rgb(240,235,223);
+    font-size:22px;
+}
+
+/* RIGHT SECTION */
+.right-section{
+    width:45%;
+    padding:40px;
+}
+
+.right-section h1{
+    font-size:28px;
+    margin-bottom:25px;
+    margin-bottom: 30px;
+}
+
+.right-section p{
+    color:#000;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+.featuresw {
+    list-style:none;
+}
+
+.featuresw li{
+    display:flex;
+    align-items:center;
+    margin-bottom:40px;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.featuresw i{
+    color:#4CAF50;
+    margin-right:12px;
+}
+
+
+.footer {
+            background: #ffffff;
+            border-top: 2px solid black;
+            padding: 20px 20px 10px;
+            color: #000;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-box h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+       }
+
+        .footer-box ul {
+            list-style: none;
+            
+        }
+
+        .footer-box ul li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: black
+        }
+
+        .logo-box img {
+            width: 150px;
+        }
+
+        .contact-box p {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color:black;
+        }
+
+        .social-box img {
+            width: 180px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .social-box h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons i {
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .social-icons i:hover {
+            background: #FF3B30;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color:black;
+            margin-top: 5px;
+        }
+
+        .footer-bottom p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .footer-bottom span {
+            cursor: pointer;
+        }
+
+        .footer-bottom span:hover {
+            color: #FF3B30;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+  
+    </style>
+</head>
+
+<body>
+   
+  
+<header class="navbar">
+
+        <!-- LEFT -->
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logoprofiles.png" alt="Fitness Logo">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="program.html">Programs</a>
+                <a href="tracking.html">Tracking</a>
+                <a href="subscriptions.html">Subscriptions</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contactus.html" class="active">Contact us</a>
+            </nav>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search programs">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="profile-wrapper">
+                <div class="profile" onclick="toggleProfile()">
+                    <img src="profile1.jpg" width="60px" border-radius="10px" alt="User">
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <p class="dropdown-title">My Accounts</p>
+                    <ul>
+                        <li><a href="personalinfo.html">Personal Information</a></li>
+
+                        <li><a href="myprogram.html">My Program</a></li>
+                        <li><a href="password.html">Password Manager</a></li>
+                        <li class="logout"><a href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+            <div class="bell-wrapper">
+                <i class="fa-regular fa-bell" onclick="toggleNotification()"></i>
+
+                <div class="notification-box" id="notificationBox">
+                    <h3>Program Notification Messages</h3>
+                    <p>1.New program Available</p>
+                    <p>New program Alert!</p>
+
+                    <p>Advanced fitness wellness Techniques is now live.start learning the latest worldwide trends and
+                        user flows today.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header> 
+    
+  <h1 class="page-title">My Program and subscription</h1>
+
+<div class="main-container">
+
+    <div class="card">
+
+        <!-- LEFT -->
+        <div class="card-left">
+            <h2>Premium Plan</h2>
+            <div class="price">$39/Mon</div>
+
+            <div class="chart">
+               <img src="images/weeklyprogress.png" width="200" alt="weeklychart">               
+            
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="card-right">
+            <div class="free-trial">14 Days Free Trial</div>
+
+            <ul class="features">
+                <li><i class="fa-solid fa-circle-check"></i>Access to advanced workouts</li>
+                <li><i class="fa-solid fa-circle-check"></i>Group challenges</li>
+                <li><i class="fa-solid fa-circle-check"></i>All Resources</li>
+                <li><i class="fa-solid fa-circle-check"></i>Nutrition tracking</li>
+                <li><i class="fa-solid fa-circle-check"></i>Trainer support</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <button class="start-btn" onclick="window.location.href='programweightloss.html'">Start program</button>
+
+</div>
+<div class="program-wrapper">
+
+    <!-- LEFT -->
+    <div class="left-section">
+        <img src="images/weightlossprgrm.png" alt="Workout">
+
+        <div class="program-info">
+            <h2>Weight loss program</h2>
+            <p>30 days Duration Period</p>
+
+            <div class="prices">Rs.2,500 / Month</div>
+
+            <!-- 🔹 TRAINER + STARS RIGHT -->
+            <div class="trainer-row">
+                <div class="trainer">Trainer : Sofiya Thompson</div>
+
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-section">
+        <h1>The weight loss Program - 2025</h1>
+
+        <p>
+            Shed fat, boost energy, and build lifelong healthy habits with our expertly designed Weight Loss Program.
+            This plan is ideal for individuals aiming to burn calories efficiently, 
+            tone their body, and stay motivated throughout their journey.
+        </p>
+
+        <h3>Whats Included</h3>
+
+        <ul class="featuresw">
+            <li><i class="fa-solid fa-circle-check"></i>Daily Guided Workouts</li>
+            <li><i class="fa-solid fa-circle-check"></i>Nutrition & Meal Plans</li>
+            <li><i class="fa-solid fa-circle-check"></i>Weekly Progress Tracking</li>
+            <li><i class="fa-solid fa-circle-check"></i>Motivational Challenges</li>
+            <li><i class="fa-solid fa-circle-check"></i>Expert Tips & Coaching</li>
+        </ul>
+    </div>
+
+</div>
+
+    
+ 
+
+
+<footer class="footer">
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-box logo-box">
+                <img src="logoprofiles.png" alt="Fitness Center Logo">
+            </div>
+
+            <!-- About Us -->
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Who We Are</li>
+                    <li>Our Mission</li>
+                    <li>How It Works</li>
+                    <li>Success</li>
+                    <li>Courses</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Browse</li>
+                    <li>Packages</li>
+                    <li>Categories</li>
+                    <li>Support</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+
+            <!-- Feature -->
+            <div class="footer-box">
+                <h3>Feature</h3>
+                <ul>
+                    <li>HIIT</li>
+                    <li>Strength Yoga</li>
+                    <li>Cardio</li>
+                    <li>Cycling</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box contact-box">
+                <h3>Contact & Social</h3>
+                <p>123 saik Street, Chennai, TN</p>
+                <p>+91-7867980-688</p>
+                <p>Fitness@Fitnesscenter.com</p>
+            </div>
+
+            <!-- Image + Social -->
+            <div class="footer-box social-box">
+                <img src="thumbs.png" alt="Dumbbell">
+                <h4>Follow Us On :</h4>
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Fitness center. All rights reserved.</p>
+            <p>
+                <span><b>Terms & Conditions</b></span> |
+                <span><b>Privacy Policy</b></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleProfile() {
+            document.getElementById("profileDropdown")
+                .classList.toggle("active");
+        }
+
+        // close when clicking outside
+        document.addEventListener("click", function (e) {
+            const profile = document.querySelector(".profile-wrapper");
+            const dropdown = document.getElementById("profileDropdown");
+
+            if (!profile.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+
+
+
+
+        function toggleNotification() {
+            const box = document.getElementById("notificationBox");
+            box.style.display = box.style.display === "block" ? "none" : "block";
+        }
+
+
+    </script>
+</body>
+</html>
+
+</body>
+</html>

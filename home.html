@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness Navbar</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="CSS/home.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+        <!-- LEFT -->
+        <div class="nav-left">
+            <div class="logo">
+                <img src="images/logoprofiles.png" alt="Fitness Logo">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="home.html" class="active">Home</a>
+                <a href="program.html">Programs</a>
+                <a href="tracking.html">Tracking</a>
+                <a href="subscriptions.html">Subscriptions</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contactus.html" >Contact us</a>
+            </nav>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search programs">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="profile-wrapper">
+                <div class="profile" onclick="toggleProfile()">
+                    <img src="images/profile1.jpg" width="60px" border-radius="10px" alt="User">
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <p class="dropdown-title">My Accounts</p>
+                    <ul>
+                        <li><a href="personalinfo.html">Personal Information</a></li>
+
+                        <li><a href="myprogram.html">My Program</a></li>
+                        <li><a href="password.html">Password Manager</a></li>
+                        <li class="logout"><a href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+            <div class="bell-wrapper">
+                <i class="fa-regular fa-bell" onclick="toggleNotification()"></i>
+
+                <div class="notification-box" id="notificationBox">
+                    <h3>Program Notification Messages</h3>
+                    <p>1.New program Available</p>
+                    <p>New program Alert!</p>
+
+                    <p>Advanced fitness wellness Techniques is now live.start learning the latest worldwide trends and
+                        user flows today.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>Transform Your Body</h1>
+        <h2>Lead Your Life</h2>
+
+        <div class="hero-buttons">
+            <button class="btn-primary">Start Journey</button>
+            <button class="btn-outline">Enquiry <span>→</span></button>
+
+
+            <div class="rating-section">
+            <div class="avatars">
+                <img src="images/user1.jpg">
+                <img src="images/user2.jpg">
+                <img src="images/user3.jpg">
+                <img src="images/user4.jpg">
+                <div class="plus">+</div>
+            </div>
+        </div>
+
+        
+
+            <div class="rating-text">
+                <strong>4.9k Ratings+</strong>
+                Trusted by 50k customers
+            </div>
+        </div>
+
+        <p class="hero-desc">
+            A personalized fitness journey designed to help you build strength,
+            burn fat and boost confidence — with expert trainers proven programs
+            and real results.
+        </p>
+
+
+           </div>
+</section>
+
+ <section class="choose-us">
+    <h2>Why Choose Us</h2>
+
+    <div class="choose-grid">
+
+        <div class="choose-card">
+            <img src="images/expert trainer.png" alt="">
+            <h3>Expert Trainers</h3>
+        </div>
+
+        <div class="choose-card">
+            <img src="images/flexible.png" alt="">
+            <h3>Flexible Options</h3>
+        </div>
+
+        <div class="choose-card">
+            <img src="images/cuttingedge.png" alt="">
+            <h3>Cutting-Edge Tracking</h3>
+        </div>
+
+        <div class="choose-card">
+            <img src="images/community.png" alt="">
+            <h3>Community Support</h3>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="about-section">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-image">
+        <img src="images/aboutusleftimage.png" alt="Trainer assisting workout">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-content">
+        <h2>About <span>Us</span></h2>
+
+        <p>
+            We’re passionate about helping you become the strongest version of yourself.
+            With certified trainers, science-backed programs, and a community that
+            motivates you every step of the way, we make fitness simple, accessible,
+            and effective — for everyone.
+        </p>
+    </div>
+
+</section>
+
+
+
+<section class="programs">
+    <h2>Popular Programs</h2>
+
+    <div class="program-grid">
+
+        <!-- CARD 1 -->
+        <div class="program-card">
+            <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            <h3>Yoga for Beginners</h3>
+            <div class="duration">6 weeks</div>
+            <img src="images/improve.png">
+            <p>Improve Flexibility</p>
+            <p class="trainer">Trainer : Thompson</p>
+            <p class="price">Rupees:2500/Month</p>
+            <button>Start now</button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="program-card">
+            <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            <h3>HIIT & Cross fit</h3>
+            <div class="duration">6 weeks</div>
+            <img src="images/improve1.png">
+            <p>Improve Flexibility</p>
+            <p class="trainer">Trainer : Thompson</p>
+            <p class="price">Rupees:2500/Month</p>
+            <button>Start now</button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="program-card">
+            <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            <h3>Nutrition for beginners</h3>
+            <div class="duration">6 weeks</div>
+            <img src="images/improve2.png">
+            <p>Improve Flexibility</p>
+            <p class="trainer">Trainer : Thompson</p>
+            <p class="price">Rupees:2500/Month</p>
+            <button>Start now</button>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="program-card">
+            <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            <h3>Cardio</h3>
+            <div class="duration">6 weeks</div>
+            <img src="images/improve3.png">
+            <p>Improve Flexibility</p>
+            <p class="trainer">Trainer : Thompson</p>
+            <p class="price">Rupees:2500/Month</p>
+            <button>Start now</button>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="subscription">
+    <h2>Subscription</h2>
+
+    <div class="plan-grid">
+
+        <!-- BASIC -->
+        <div class="plan">
+            <h3>Basic Plan</h3>
+            <div class="price">$7/Mon</div>
+            <div class="trial black">No Free Trail</div>
+
+            <ul class="features">
+                <li><i class="fa-solid fa-circle-check check"></i> Limited Access only</li>
+                <li><i class="fa-solid fa-circle-xmark cross"></i> Group challenges</li>
+                <li><i class="fa-solid fa-circle-xmark cross"></i> All Resources</li>
+                <li><i class="fa-solid fa-circle-xmark cross"></i> Nutrition tracking</li>
+                <li><i class="fa-solid fa-circle-xmark cross"></i> Trainer support</li>
+            </ul>
+
+            <div class="buttons">
+                <button class="subscribe">Subscribe Now</button>
+                <button class="view">View detail</button>
+            </div>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="plan">
+            <h3>Premium Plan</h3>
+            <div class="price blue">$39/Mon</div>
+            <div class="trial blue">14 Days Free Trail</div>
+
+            <ul class="features">
+                <li><i class="fa-solid fa-circle-check check"></i> Access to advanced workouts</li>
+                <li><i class="fa-solid fa-circle-check check"></i> Group challenges</li>
+                <li><i class="fa-solid fa-circle-check check"></i> All Resources</li>
+                <li><i class="fa-solid fa-circle-check check"></i> Nutrition tracking</li>
+                <li><i class="fa-solid fa-circle-check check"></i> Trainer support</li>
+            </ul>
+
+            <div class="buttons">
+                <button class="subscribe">Subscribe Now</button>
+                <button class="view">View detail</button>
+            </div>
+        </div>
+
+        <!-- STANDARD -->
+        <div class="plan">
+            <h3>Standard Plan</h3>
+            <div class="price red">$19/Mon</div>
+            <div class="trial red">7 Days Free Trail</div>
+
+            <ul class="features">
+                <li><i class="fa-solid fa-circle-check check"></i> Access to advanced workouts</li>
+                <li><i class="fa-solid fa-circle-check check"></i> Group challenges</li>
+                <li><i class="fa-solid fa-circle-xmark cross"></i> All Resources</li>
+                <li><i class="fa-solid fa-circle-xmark cross"></i> Nutrition tracking</li>
+                <li><i class="fa-solid fa-circle-xmark cross"></i> Trainer support</li>
+            </ul>
+
+            <div class="buttons">
+                <button class="subscribe">Subscribe Now</button>
+                <button class="view">View detail</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="trainers">
+    <h2>Our Trainers</h2>
+
+    <div class="trainer-grid">
+
+        <!-- Trainer 1 -->
+        <div class="trainer-card">
+            <div class="trainer-img">
+                <img src="images/trainer1.png" alt="Emma Thompson">
+            </div>
+            <h3 class="trainer-name">Emma Thompson</h3>
+            <p class="trainer-info">
+                Specialty: Nutrition & Weight Loss<br>
+                Certifications: ACE Certified Specialist<br>
+                Experience: 7 years in nutrition + training
+            </p>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="trainer-card">
+            <div class="trainer-img">
+                <img src="images/trainer2.png" alt="John Carter">
+            </div>
+            <h3 class="trainer-name">John Carter</h3>
+            <p class="trainer-info">
+                Specialty: Yoga & Mindfulness<br>
+                Certifications: Yoga Alliance RYT-100<br>
+                Experience: 6 Years in holistic wellness
+            </p>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="trainer-card">
+            <div class="trainer-img">
+                <img src="images/trianer3.png" alt="Sophiy a Mart">
+            </div>
+            <h3 class="trainer-name">Sophiya Mart</h3>
+            <p class="trainer-info">
+                Specialty: Nutrition & Weight Loss<br>
+                Certifications: ACE Certified Specialist<br>
+                Experience: 7 years in nutrition + training
+            </p>
+        </div>
+
+        <!-- Trainer 4 -->
+        <div class="trainer-card">
+            <div class="trainer-img">
+                <img src="images/trianer4.png" alt="David Thompson">
+            </div>
+            <h3 class="trainer-name">David Thompson</h3>
+            <p class="trainer-info">
+                Specialty: HIIT & Cross fit<br>
+                Certifications: Cross fit level 2 coach<br>
+                Experience: 10 years in functional fitness
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="faq">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+
+    <!-- FAQ 1 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>1. Do I need to be fit before joining?</span>
+            <span class="faq-icon">⌄</span>
+        </div>
+        <div class="faq-answer">
+            Not at all! Our programs are designed for all levels — from beginners to advanced athletes.
+            Trainers adjust workouts based on your ability.
+        </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>2. What types of classes do you offer?</span>
+            <span class="faq-icon">⌄</span>
+        </div>
+        <div class="faq-answer">
+            We offer a wide range: HIIT, Strength Training, Yoga, Pilates, CrossFit, Spin, Zumba, Boxing,
+            and more.
+        </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>3. Can I try a class before committing?</span>
+            <span class="faq-icon">⌄</span>
+        </div>
+        <div class="faq-answer">
+            Yes! We offer a free trial class so you can experience our workouts before signing up.
+        </div>
+    </div>
+
+
+      <!-- FAQ 4 -->
+    <div class="faq-item">
+        <div class="faq-question">
+            <span>4. What equipment do i need  for online classes?</span>
+            <span class="faq-icon">⌄</span>
+        </div>
+        <div class="faq-answer">
+           Most classes require just a mat and comfortable workout gear. some strength classes may recommend dumbbells or resistance bands.
+        </div>
+    </div>
+</section>
+
+
+
+ <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-box logo-box">
+                <img src="images/logoprofiles.png" alt="Fitness Center Logo">
+            </div>
+
+            <!-- About Us -->
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Who We Are</li>
+                    <li>Our Mission</li>
+                    <li>How It Works</li>
+                    <li>Success</li>
+                    <li>Courses</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Browse</li>
+                    <li>Packages</li>
+                    <li>Categories</li>
+                    <li>Support</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+
+            <!-- Feature -->
+            <div class="footer-box">
+                <h3>Feature</h3>
+                <ul>
+                    <li>HIIT</li>
+                    <li>Strength Yoga</li>
+                    <li>Cardio</li>
+                    <li>Cycling</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box contact-box">
+                <h3>Contact & Social</h3>
+                <p>123 saik Street, Chennai, TN</p>
+                <p>+91-7867980-688</p>
+                <p>Fitness@Fitnesscenter.com</p>
+            </div>
+
+            <!-- Image + Social -->
+            <div class="footer-box social-box">
+                <img src="images/thumbs.png" alt="Dumbbell">
+                <h4>Follow Us On :</h4>
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Fitness center. All rights reserved.</p>
+            <p>
+                <span><b>Terms & Conditions</b></span> |
+                <span><b>Privacy Policy</b></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleProfile() {
+            document.getElementById("profileDropdown")
+                .classList.toggle("active");
+        }
+
+        // close when clicking outside
+        document.addEventListener("click", function (e) {
+            const profile = document.querySelector(".profile-wrapper");
+            const dropdown = document.getElementById("profileDropdown");
+
+            if (!profile.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+
+
+
+
+        function toggleNotification() {
+            const box = document.getElementById("notificationBox");
+            box.style.display = box.style.display === "block" ? "none" : "block";
+        }
+
+
+    
+
+
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('active');
+    });
+});
+</script>
+
+
+</body>
+</html>

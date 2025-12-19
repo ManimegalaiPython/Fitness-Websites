@@ -1,0 +1,246 @@
+class="active
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Navbar</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="CSS/program.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <!-- LEFT -->
+        <div class="nav-left">
+            <div class="logo">
+                <img src="logo.png" alt="Fitness Logo">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="program.html" class="active">Programs</a>
+                <a href="tracking.html">Tracking</a>
+                <a href="subscriptions.html">Subscriptions</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contactus.html">Contact us</a>
+            </nav>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search programs">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="profile">
+                <img src="profile.jpg" alt="User">
+            </div>
+
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+    </header>
+
+
+
+
+    <div class="container">
+
+        <!-- FILTER PANEL -->
+        <aside class="filters">
+            <h4>Types of Program</h4>
+            <label><input type="checkbox" value="weightloss"> Weight loss</label>
+            <label><input type="checkbox" value="muscle"> Muscle gain</label>
+            <label><input type="checkbox" value="mindfulness"> Flexibility Mindfulness</label>
+            <label><input type="checkbox" value="endurance"> Endurance</label>
+            <label><input type="checkbox" value="general"> General fitness</label>
+            <label><input type="checkbox" value="strength"> Strength training</label>
+
+            <h4>Program Type</h4>
+            <label><input type="radio" name="type" value="daily"> Daily workouts</label>
+            <label><input type="radio" name="type" value="personal"> Personal Trainings</label>
+            <label><input type="radio" name="type" value="corporate"> Corporate wellness</label>
+            <label><input type="radio" name="type" value="video"> Video Based session</label>
+            <label><input type="radio" name="type" value="home"> Home workouts</label>
+
+            <h4>Duration</h4>
+            <label><input type="radio" name="duration" value="7"> 7Days</label>
+            <label><input type="radio" name="duration" value="14"> 14Days</label>
+            <label><input type="radio" name="duration" value="30"> 30Days</label>
+            <label><input type="radio" name="duration" value="90"> 3Month</label>
+            <label><input type="radio" name="duration" value="ongoing"> Ongoing</label>
+
+            <h4>Subscription Type</h4>
+            <label><input type="checkbox"> Basic plan</label>
+            <label><input type="checkbox"> Premium plan</label>
+            <label><input type="checkbox"> Standard plan</label>
+
+            <h4>Ratings</h4>
+            <label><input type="radio" name="rating"> 5 star ★★★★★</label>
+            <label><input type="radio" name="rating"> 4 star & Above</label>
+
+            <button id="filterBtn">Submit</button>
+        </aside>
+
+        <!-- PROGRAM CARDS -->
+        <section class="cards">
+
+            <div class="card" data-tags="weightloss daily">
+                <img src="Images/1.jpg">
+                <h3>Weight loss program</h3>
+                <p>6 weeks</p>
+                <p>Daily 1hour session</p>
+                <p class="trainer">Trainer : Thompson</p>
+                <p class="price">Rupees:2500/Month</p>
+                <button>Subscribe</button>
+            </div>
+
+            <div class="card" data-tags="weightloss strength">
+                <img src="Images/2.jpg">
+                <h3>Weight loss program</h3>
+                <p>6 weeks</p>
+                <p>Daily 1hour session</p>
+                <p class="trainer">Trainer : Thompson</p>
+                <p class="price">Rupees:2500/Month</p>
+                <button>Subscribe</button>
+            </div>
+
+            <div class="card" data-tags="muscle personal">
+                <img src="Images/3.jpg">
+                <h3>Weight loss program</h3>
+                <p>6 weeks</p>
+                <p>Daily 1hour session</p>
+                <p class="trainer">Trainer : Thompson</p>
+                <p class="price">Rupees:2500/Month</p>
+                <button>Subscribe</button>
+            </div>
+
+            <div class="card" data-tags="endurance daily">
+                <img src="Images/4.jpg">
+                <h3>Weight loss program</h3>
+                <p>6 weeks</p>
+                <p>Daily 1hour session</p>
+                <p class="trainer">Trainer : Thompson</p>
+                <p class="price">Rupees:2500/Month</p>
+                <button>Subscribe</button>
+            </div>
+
+            <div class="card" data-tags="strength video">
+                <img src="Images/5.jpg">
+                <h3>Weight loss program</h3>
+                <p>6 weeks</p>
+                <p>Daily 1hour session</p>
+                <p class="trainer">Trainer : Thompson</p>
+                <p class="price">Rupees:2500/Month</p>
+                <button>Subscribe</button>
+            </div>
+
+            <div class="card" data-tags="mindfulness home">
+                <img src="Images/6.jpg">
+                <h3>Weight loss program</h3>
+                <p>6 weeks</p>
+                <p>Daily 1hour session</p>
+                <p class="trainer">Trainer : Thompson</p>
+                <p class="price">Rupees:2500/Month</p>
+                <button>Subscribe</button>
+            </div>
+
+        </section>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-box logo-box">
+                <img src="Images/logo.png" alt="Fitness Center Logo">
+            </div>
+
+            <!-- About Us -->
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Who We Are</li>
+                    <li>Our Mission</li>
+                    <li>How It Works</li>
+                    <li>Success</li>
+                    <li>Courses</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Browse</li>
+                    <li>Packages</li>
+                    <li>Categories</li>
+                    <li>Support</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+
+            <!-- Feature -->
+            <div class="footer-box">
+                <h3>Feature</h3>
+                <ul>
+                    <li>HIIT</li>
+                    <li>Strength Yoga</li>
+                    <li>Cardio</li>
+                    <li>Cycling</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box contact-box">
+                <h3>Contact & Social</h3>
+                <p>123 saik Street, Chennai, TN</p>
+                <p>+91-7867980-688</p>
+                <p>Fitness@Fitnesscenter.com</p>
+            </div>
+
+            <!-- Image + Social -->
+            <div class="footer-box social-box">
+                <img src="Images/dumbbell.png" alt="Dumbbell">
+                <h4>Follow Us On :</h4>
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Fitness center. All rights reserved.</p>
+            <p>
+                <span>Terms & Conditions</span> |
+                <span>Privacy Policy</span>
+            </p>
+        </div>
+    </footer>
+
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

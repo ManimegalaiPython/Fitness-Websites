@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Navbar</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/blogs.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <!-- LEFT -->
+        <div class="nav-left">
+            <div class="logo">
+                <img src="images/logoprofiles.png" alt="Fitness Logo">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="program.html">Programs</a>
+                <a href="tracking.html">Tracking</a>
+                <a href="subscriptions.html">Subscriptions</a>
+                <a href="blogs.html" class="active">Blogs</a>
+                <a href="contactus.html">Contact us</a>
+            </nav>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search programs">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="profile-wrapper">
+                <div class="profile" onclick="toggleProfile()">
+                    <img src="images/profile1.jpg" width="60px" border-radius="10px" alt="User">
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <p class="dropdown-title">My Accounts</p>
+                    <ul>
+                        <li><a href="personalinfo.html">Personal Information</a></li>
+
+                        <li><a href="myprogram.html">My Program</a></li>
+                        <li><a href="password.html">Password Manager</a></li>
+                        <li class="logout"><a href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+            <div class="bell-wrapper">
+                <i class="fa-regular fa-bell" onclick="toggleNotification()"></i>
+
+                <div class="notification-box" id="notificationBox">
+                    <h3>Program Notification Messages</h3>
+                    <p>1.New program Available</p>
+                    <p>New program Alert!</p>
+
+                    <p>Advanced fitness wellness Techniques is now live.start learning the latest worldwide trends and
+                        user flows today.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="blogs">
+
+        <h2>Our Fitness Blogs</h2>
+        <p class="subtitle">Fitness & Health Insights</p>
+
+        <!-- BLOG 1 -->
+        <div class="blog-row">
+            <div class="blog-img">
+                <img src="images/nutrition.png" alt="Nutrition">
+            </div>
+
+            <div class="blog-content">
+                <h3>Top 5 Nutrition Tips for Faster Recovery</h3>
+                <p>
+                    Fuel your body the right way! Learn how balanced meals and proper
+                    hydration can speed up recovery and support muscle growth.
+                </p>
+
+                <h3>10-Minute Workouts for Busy Professionals</h3>
+                <p>
+                    No time? No problem. Try these short, high-impact routines you can
+                    do anywhere to burn calories and boost stamina.
+                </p>
+            </div>
+        </div>
+
+        <p class="center-text">
+            <b>Tips, guides, and motivation to keep you moving strong.</b>
+        </p>
+
+        <p class="center-text link">
+            How to Use Wearables to Improve Performance
+        </p>
+
+        <!-- BLOG 2 -->
+        <div class="blog-row reverse">
+            <div class="blog-img">
+                <img src="images/tracking1.png" alt="Fitness Tracker">
+            </div>
+
+            <div class="blog-content">
+                <h3>Top 5 Fitness Apps to Track Your Progress in 2025</h3>
+                <p>
+                    1. From tracking heart rate to sleep cycles, discover how
+                    wearables can help maximize your training efficiency.
+                </p>
+                <p>
+                    2. Tracking your progress helps you stay accountable and visualize
+                    your journey. Even small improvements like an extra rep or faster
+                    mile can be powerful motivators.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-box logo-box">
+                <img src="images/logoprofiles.png" alt="Fitness Center Logo">
+            </div>
+
+            <!-- About Us -->
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Who We Are</li>
+                    <li>Our Mission</li>
+                    <li>How It Works</li>
+                    <li>Success</li>
+                    <li>Courses</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Browse</li>
+                    <li>Packages</li>
+                    <li>Categories</li>
+                    <li>Support</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+
+            <!-- Feature -->
+            <div class="footer-box">
+                <h3>Feature</h3>
+                <ul>
+                    <li>HIIT</li>
+                    <li>Strength Yoga</li>
+                    <li>Cardio</li>
+                    <li>Cycling</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box contact-box">
+                <h3>Contact & Social</h3>
+                <p>123 saik Street, Chennai, TN</p>
+                <p>+91-7867980-688</p>
+                <p>Fitness@Fitnesscenter.com</p>
+            </div>
+
+            <!-- Image + Social -->
+            <div class="footer-box social-box">
+                <img src="images/thumbs.png" alt="Dumbbell">
+                <h4>Follow Us On :</h4>
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Fitness center. All rights reserved.</p>
+            <p>
+                <span><b>Terms & Conditions</b></span> |
+                <span><b>Privacy Policy</b></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleProfile() {
+            document.getElementById("profileDropdown")
+                .classList.toggle("active");
+        }
+
+        // close when clicking outside
+        document.addEventListener("click", function (e) {
+            const profile = document.querySelector(".profile-wrapper");
+            const dropdown = document.getElementById("profileDropdown");
+
+            if (!profile.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+
+
+
+
+        function toggleNotification() {
+            const box = document.getElementById("notificationBox");
+            box.style.display = box.style.display === "block" ? "none" : "block";
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

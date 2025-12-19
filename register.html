@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register Free</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Sans Font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Open Sans', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    height:85vh;
+    background:#f9f2f0;
+    display:flex;
+    border-radius:25px;
+    overflow:hidden;
+}
+
+/* LEFT SIDE */
+.left{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    width:420px;
+    background:#fff;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.card h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.input{
+    margin-bottom:18px;
+}
+
+.input input{
+    width:100%;
+    padding:14px;
+    border-radius:25px;
+    border:2px solid #FF3B30;
+    outline:none;
+    font-size:14px;
+}
+
+.input input::placeholder{
+    color:#FF3B30;
+}
+
+.actions{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.btn{
+    background:#FF3B30;
+    color:#fff;
+    border:none;
+    padding:12px 36px;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.actions a{
+    font-size:13px;
+    color:#555;
+    text-decoration:none;
+}
+
+.divider{
+    text-align:center;
+    margin:25px 0 15px;
+    font-weight:600;
+    position:relative;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    width:30%;
+    height:1px;
+    background:#FF3B30;
+    position:absolute;
+    top:50%;
+}
+
+.divider::before{ left:0; }
+.divider::after{ right:0; }
+
+.social{
+    border:2px solid #FF3B30;
+    border-radius:25px;
+    padding:12px;
+    display:flex;
+    justify-content:space-around;
+    font-size:20px;
+}
+
+.google{color:#DB4437;}
+.facebook{color:#1877F2;}
+.instagram{color:#E4405F;}
+.twitter{color:#1DA1F2;}
+
+.signup{
+    text-align:center;
+    margin-top:18px;
+    font-size:14px;
+}
+
+.signup a{
+    color:#FF3B30;
+    font-weight:600;
+    text-decoration:none;
+}
+
+/* RIGHT SIDE IMAGE */
+.right{
+    flex:1;
+    background:url("bgimage.png") center/cover no-repeat;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .right{ display:none; }
+    .container{ justify-content:center; }
+}
+
+/* MESSAGE */
+.message{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+    display:none;
+}
+.success{ color:green; }
+.error{ color:red; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+        <div class="card">
+            <div class="close">&times;</div>
+
+            <h2>Register Free !</h2>
+
+            <!-- ADDED ID -->
+            <div class="input">
+                <input type="email" id="email" placeholder="Enter your e-mail">
+            </div>
+
+            <div class="input">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+
+            <div class="actions">
+                <!-- ADDED FUNCTION -->
+                <button class="btn" onclick="login()">Login</button>
+                <a href="#">Forget your password?</a>
+            </div>
+
+            <!-- MESSAGE AREA -->
+            <div id="msg" class="message"></div>
+
+            <div class="divider">Sign Up Using</div>
+
+            <div class="social">
+                <i class="fab fa-google google"></i>
+                <i class="fab fa-facebook-f facebook"></i>
+                <i class="fab fa-instagram instagram"></i>
+                <i class="fab fa-twitter twitter"></i>
+            </div>
+
+            <div class="signup">
+                Don't have an account ?
+                <a href="createaccount.html">Create New Account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right"></div>
+
+</div>
+
+<script>
+function login(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var msg = document.getElementById("msg");
+
+    if(email === "" || password === ""){
+        msg.style.display = "block";
+        msg.className = "message error";
+        msg.innerHTML = "Please enter email and password";
+        return;
+    }
+
+    // Demo validation
+    if(email === "admin@gmail.com" && password === "12345"){
+        msg.style.display = "block";
+        msg.className = "message success";
+        msg.innerHTML = "Login successful! Redirecting...";
+
+        setTimeout(function(){
+            window.location.href = "home.html"; // redirect page
+        },1500);
+    }else{
+        msg.style.display = "block";
+        msg.className = "message error";
+        msg.innerHTML = "Invalid email or password";
+    }
+}
+</script>
+
+</body>
+</html>

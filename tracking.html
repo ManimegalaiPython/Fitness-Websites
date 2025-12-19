@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness Navbar</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="CSS/tracking.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+        <!-- LEFT -->
+        <div class="nav-left">
+            <div class="logo">
+                <img src="images/logoprofiles.png" alt="Fitness Logo">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="home.html">Home</a>
+                <a href="program.html">Programs</a>
+                <a href="tracking.html" class="active">Tracking</a>
+                <a href="subscriptions.html">Subscriptions</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="contactus.html" >Contact us</a>
+            </nav>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search programs">
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="profile-wrapper">
+                <div class="profile" onclick="toggleProfile()">
+                    <img src="images/profile1.jpg" width="60px" border-radius="10px" alt="User">
+                </div>
+
+                <!-- Profile Dropdown -->
+                <div class="profile-dropdown" id="profileDropdown">
+                    <p class="dropdown-title">My Accounts</p>
+                    <ul>
+                        <li><a href="personalinfo.html">Personal Information</a></li>
+
+                        <li><a href="myprogram.html">My Program</a></li>
+                        <li><a href="password.html">Password Manager</a></li>
+                        <li class="logout"><a href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+            <div class="bell-wrapper">
+                <i class="fa-regular fa-bell" onclick="toggleNotification()"></i>
+
+                <div class="notification-box" id="notificationBox">
+                    <h3>Program Notification Messages</h3>
+                    <p>1.New program Available</p>
+                    <p>New program Alert!</p>
+
+                    <p>Advanced fitness wellness Techniques is now live.start learning the latest worldwide trends and
+                        user flows today.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+<section class="progress-section">
+
+    <h2 class="title">Weekly progress tracking</h2>
+
+    <!-- IMAGE -->
+    <div class="top-image">
+        <img src="images/tracking.png" alt="Fitness Tracker">
+    </div>
+
+    <!-- RADIO OPTIONS -->
+    <div class="wrapper">
+    <!-- Top Left -->
+    <div class="item" style="grid-column:1; grid-row:1;" onclick="go('tracking.html')">
+        <div class="circle active"></div>
+        Weekly Progress Tracking
+    </div>
+
+    <!-- Top Right -->
+    <div class="item" style="grid-column:3; grid-row:1;" onclick="go('nutrition.html')">
+        <div class="circle"></div>
+        Nutrition & Meal Plans
+    </div>
+
+    <!-- Center -->
+    <div class="item" style="grid-column:2; grid-row:2;" onclick="go('dailywork.html')">
+        <div class="circle"></div>
+        Daily Guided Workouts
+    </div>
+
+    <!-- Bottom Left -->
+    <div class="item" style="grid-column:1; grid-row:3;" onclick="go('experttips.html')">
+        <div class="circle"></div>
+        Expert Tips & Coaching
+    </div>
+
+    <!-- Bottom Right -->
+    <div class="item" style="grid-column:3; grid-row:3;" onclick="go('challenges.html')">
+        <div class="circle"></div>
+        Motivational Challenges
+    </div>
+</div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- LEFT TEXT -->
+        <div class="text-content">
+            <h3>Weekly Progress Tracking</h3>
+
+            <h4>Initial Assessment & Goal Setting</h4>
+            <ul>
+                <li>Baseline fitness test (strength, endurance, flexibility)</li>
+                <li>Body measurements (weight, BMI, waist/hip ratio)</li>
+                <li>Personalized goal setup (e.g., lose 5kg in 4 weeks)</li>
+            </ul>
+
+            <h4>Performance Milestones</h4>
+            <ul>
+                <li>7-day streaks</li>
+                <li>New personal records (e.g., 30-min HIIT without stopping)</li>
+                <li>Nutrition adherence for 5 consecutive days</li>
+            </ul>
+        </div>
+
+        <!-- RIGHT CHART -->
+        <div class="chart-box">
+            <img src="images/weeklyprogress.png" alt="Weekly Progress Chart">
+        </div>
+
+    </div>
+
+</section>
+
+
+
+ <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-box logo-box">
+                <img src="images/logoprofiles.png" alt="Fitness Center Logo">
+            </div>
+
+            <!-- About Us -->
+            <div class="footer-box">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Who We Are</li>
+                    <li>Our Mission</li>
+                    <li>How It Works</li>
+                    <li>Success</li>
+                    <li>Courses</li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Browse</li>
+                    <li>Packages</li>
+                    <li>Categories</li>
+                    <li>Support</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+
+            <!-- Feature -->
+            <div class="footer-box">
+                <h3>Feature</h3>
+                <ul>
+                    <li>HIIT</li>
+                    <li>Strength Yoga</li>
+                    <li>Cardio</li>
+                    <li>Cycling</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-box contact-box">
+                <h3>Contact & Social</h3>
+                <p>123 saik Street, Chennai, TN</p>
+                <p>+91-7867980-688</p>
+                <p>Fitness@Fitnesscenter.com</p>
+            </div>
+
+            <!-- Image + Social -->
+            <div class="footer-box social-box">
+                <img src="images/thumbs.png" alt="Dumbbell">
+                <h4>Follow Us On :</h4>
+                <div class="social-icons">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-google"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2025 Fitness center. All rights reserved.</p>
+            <p>
+                <span><b>Terms & Conditions</b></span> |
+                <span><b>Privacy Policy</b></span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleProfile() {
+            document.getElementById("profileDropdown")
+                .classList.toggle("active");
+        }
+
+        // close when clicking outside
+        document.addEventListener("click", function (e) {
+            const profile = document.querySelector(".profile-wrapper");
+            const dropdown = document.getElementById("profileDropdown");
+
+            if (!profile.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+
+
+
+
+        function toggleNotification() {
+            const box = document.getElementById("notificationBox");
+            box.style.display = box.style.display === "block" ? "none" : "block";
+        }
+
+        function go(page) {
+    window.location.href = page;
+}
+
+    </script>
+
+
+</body>
+</html>
